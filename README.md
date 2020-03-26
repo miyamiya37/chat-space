@@ -32,8 +32,8 @@
 ## massegesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null: false|
-|text|text|null: false|
+|image|text||
+|text|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
