@@ -2,12 +2,13 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 |username|string|null: false|
 ### Association
 - has_many :chst-messeges
-- has_many :chat-groups
+- has_many :users_chat-group
+- has_many :chat-groups, through: users_chat-group
 
 ## users_chat-groupテーブル
 |Column|Type|Options|
@@ -21,10 +22,13 @@
 ## chat-groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|nåull: false|
+|groupname|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :usera
+- has_many :user, through: users_chat-group
+- has_many :users_chat-group
+- has_many :messeges
+
 
 ## chat-massegesテーブル
 |Column|Type|Options|
@@ -35,3 +39,4 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :group
