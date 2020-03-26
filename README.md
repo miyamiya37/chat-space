@@ -12,7 +12,9 @@
 ## users_chat-groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, 
+|group_id|integer|null: false
+foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :chat-group
@@ -30,6 +32,8 @@
 |------|----|-------|
 |image|text|null: false|
 |text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, 
+|group_id|integer|null: false,
+foreign_key: true|
 ### Association
-- belongs_to :useraaa
+- belongs_to :user
