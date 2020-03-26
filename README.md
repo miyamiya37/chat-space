@@ -4,9 +4,9 @@
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
-- has_many :chst-messeges
+- has_many :messages
 - has_many :users_groups
 - has_many :groups, through: users_groups
 
@@ -17,20 +17,19 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :chat-group
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :user, through: users_groups
 - has_many :users_groups
 - has_many :messeges
 
 
-## chat-massegesテーブル
+## massegesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
