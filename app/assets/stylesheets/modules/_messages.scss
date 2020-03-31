@@ -28,6 +28,8 @@
       }
       &__menu {
         display: flex;
+        position: absolute;
+        right:15px ;
         justify-content: space-between;
          li {
            margin-left: 5px;
