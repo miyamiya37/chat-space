@@ -1,0 +1,35 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__group-name
+      グループ名
+      %ul.main-header__left-box__member-list
+        Member :
+        %li.main-header__left-box__member-list-member
+          name
+    .main-header__edit-btn
+      = link_to "#" do
+        Edit
+
+
+  .messages
+    .message
+      .message__upper-info
+        名前
+      .message__daily
+        2020/03/30
+      .message__main-message
+        投稿
+
+
+
+
+  .form
+    %form.new-message
+    .input-box
+      %input{type:"text", class: "input-box__text", placeholder: "type amessage"}
+      %label{class: "input-box__image"}
+        = icon("fas", "image")
+        %input{type:"file", class: "input-box__image__file"}
+    %input{type: "submit", class: "submit-btn", value:"Send"}
+
