@@ -2,13 +2,14 @@
   .main-header
     .main-header__left-box
       .main-header__group-name
-      グループ名
+        = @group.name
       %ul.main-header__left-box__member-list
         Member :
         %li.main-header__left-box__member-list-member
-          name
+        - @group.users.each do |user|
+          =user.name
     .main-header__edit-btn
-      = link_to "#" do
+      = link_to edit_group_path(@group) do
         Edit
 
   .messages
@@ -27,6 +28,6 @@
       .input-box
         = f.label :image, class: 'form__text__image' do
           = icon('fas', 'image', class: 'icon')
-        = f.file_field :image, class: 'input-box__image__file'
-      = f.submit 'Send', class: 'submit-btn'
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'new-message_submit-btn'
 
