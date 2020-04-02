@@ -12,6 +12,7 @@
         Edit
 
   .messages
+    = render @messages
     .message
       .message__upper-info
         名前
@@ -21,11 +22,11 @@
         投稿
 
   .form
-    %form.new-message
-    .input-box
-      %input{type:"text", class: "input-box__text", placeholder: "type amessage"}
-      %label{class: "input-box__image"}
-        = icon("fas", "image")
-        %input{type:"file", class: "input-box__image__file"}
-    %input{type: "submit", class: "submit-btn", value:"Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-box', placeholder: 'type a message'
+      .input-box
+        = f.label :image, class: 'form__text__image' do
+          = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
 
