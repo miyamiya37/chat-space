@@ -14,20 +14,15 @@
 
   .messages
     = render @messages
-    .message
-      .message__upper-info
-        名前
-      .message__daily
-        2020/03/30
-      .message__main-message
-        投稿
 
   .form
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'input-box', placeholder: 'type a message'
-      .input-box
-        = f.label :image, class: 'form__text__image' do
-          = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'input-box__image__file'
-      = f.submit 'Send', class: 'new-message_submit-btn'
+      .input
+        .input-box
+          = f.text_field :content, class: "input-box__text", placeholder: "type a message"
+          = f.label :image, class: 'input-box__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'input-box__image__file'
+        .submit
+          = f.submit 'Send', class: 'submit-btn'
 
