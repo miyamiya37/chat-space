@@ -118,24 +118,27 @@
     .message {
       padding-top: 35px;
       padding-left: 40px;
-      &__upper-info {
-        font-size: 16px;
-        color: #333333;
-        float: left;
-        margin-right: 10px;
+      .upper-message{
 
-      }
-      &__daily {
-        font-size: 12px;
-        color: #999999;
+        &__upper-info {
+          font-size: 16px;
+          color: #333333;
+          float: left;
+          margin-right: 10px;
+
         }
-      &__main-message {
-        font-size: 14px;
-        color: #434a54;
-        margin-bottom: 46px;
-        position: absolute;
-        margin-top: 12px;
+        &__data {
+          font-size: 12px;
+          color: #999999;
           }
+        &__main-message {
+          font-size: 14px;
+          color: #434a54;
+          margin-bottom: 46px;
+          position: absolute;
+          margin-top: 12px;
+            }
+      }
     }
 
   }  
